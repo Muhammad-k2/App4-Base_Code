@@ -33,25 +33,25 @@ blah, blah, blah, blah
 
 
 <script>
-        var allergy_count = 0;
-        var cold_count = 0;
+        var dementia_count = 0;
+        var forgetful_count = 0;
 
 
-        function allergyAdd(){ /*function to get keep track of the answers that are symptoms of allergies*/
-            allergy_count = allergy_count + 1;
+        function dementiaAdd(){ /*function to get keep track of the answers that are symptoms of dementia*/
+            dementia_count = dementia_count + 1;
 
         }
 
-        function coldAdd(){ /*function to get keep track of the answers that are symptoms of a cold*/
-            cold_count = cold_count + 1;
+        function forgetfulAdd(){ /*function to get keep track of the answers that are symptoms of a forgetfulness*/
+            forgetful_count = forgetful_count + 1;
         }
 	
-	function GetResults(){ /*function to get keep track of the allergy percentage and cold percentage*/
-		var allergyPercent = ((allergy_count)/(allergy_count + cold_count)) *100; /*variable to calculate the probability of it being allergies*/
-		var coldPercent = ((cold_count)/(allergy_count + cold_count)) *100; /*variable to calculate the probability of it being a cold*/
-		document.getElementById("results").innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%";
+	function GetResults(){ /*function to get keep track of the dementia percentage and forgetfulness percentage*/
+		var dementiaPercent = ((dementia_count)/(dementia_count + forgetful_count)) *100; /*variable to calculate the probability of it being dementia*/
+		var forgetfulPercent = ((forgetful_count)/(dementia_count + forgetful_count)) *100; /*variable to calculate the probability of it being forgetfulness*/
+		document.getElementById("results").innerHTML = "Probability it is dementia =" + dementiaPercent + "%" + "<br> Probability it is just forgetfulness =" + forgetfulPercent + "%";
 	}
-/*removed var from 54. changed results function name */ 
+ 
   </script>
 
 
@@ -80,11 +80,11 @@ blah, blah, blah, blah
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
+	<h1>Dementia or Forgetfulness?</h1>
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>Do you think that your friend might have dementia but wonder if it's just innocent forgetfulness? Answer a few short questions to find out!</p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
@@ -98,12 +98,12 @@ blah, blah, blah, blah
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?</p>
-		<a href="#two" onclick="allergyAdd()" class="w3-btn w3-black"> Yes</a>
-		<a href="#two" onclick="coldAdd()" class="w3-btn w3-black">No</a>											
+        <p>Does the friend repeat the same questions OR statements OR stories in the same day?</p>
+		<a href="#two" onclick="dementiaAdd()" class="w3-btn w3-black"> Yes</a>
+		<a href="#two" onclick="forgetfulAdd()" class="w3-btn w3-black">No</a>											
     	</div>
 </div>
-<!--first question, response will increment appropriate variable by 1. changed quotation mark to stop error where yes goes back home-->
+<!--first question, response will increment appropriate variable by 1.-->
 	
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
@@ -111,12 +111,12 @@ blah, blah, blah, blah
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a fever?</p>
-		<a href="#three" onclick="coldAdd()" class="w3-btn w3-black"> Yes</a>
-		<a href="#three" onclick="allergyAdd()" class="w3-btn w3-black">No</a>									
+		<p>Does the friend suspect others are moving, hiding or stealing items when they cannot find them?</p>
+		<a href="#three" onclick="dementiaAdd()" class="w3-btn w3-black"> Yes</a>
+		<a href="#three" onclick="forgetfulAdd()" class="w3-btn w3-black">No</a>									
 	</div>
 </div>	
-<!--second question, response will increment variable by 1...changed quotation mark to stop error where yes goes back home-->	
+<!--second question, response will increment variable by 1.-->	
 
 <div class="page" id="three">
 	<div class="w3-container w3-flat-carrot">
@@ -124,12 +124,12 @@ blah, blah, blah, blah
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a sore throat?</p>
-		<a href="#four" onclick="coldAdd()" class="w3-btn w3-black">Yes</a>
-		<a href="#four" onclick="allergyAdd()" class="w3-btn w3-black">No</a>
+		<p>Does the patient become disoriented in unfamiliar places?</p>
+		<a href="#four" onclick="dementiaAdd()" class="w3-btn w3-black">Yes</a>
+		<a href="#four" onclick="forgetfulAdd()" class="w3-btn w3-black">No</a>
 	</div>
 </div>	
-<!--Third question, response will increment variable by 1...changed quotation mark to stop error where yes goes back home-->
+<!--Third question, response will increment variable by 1.-->
 	
 <div class="page" id="four">
 	<div class="w3-container w3-flat-carrot">
@@ -137,12 +137,12 @@ blah, blah, blah, blah
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are your symptoms seasonal or chronic?</p>
-		<a href="#five" onclick="allergyAdd()" class="w3-btn w3-black">Yes</a>
-		<a href="#five" onclick="coldAdd()" class="w3-btn w3-black">No</a>											
+		<p>Is your friend getting lost in familiar surroundings such as their neighborhood?</p>
+		<a href="#five" onclick="dementiaAdd()" class="w3-btn w3-black">Yes</a>
+		<a href="#five" onclick="forgetfulAdd()" class="w3-btn w3-black">No</a>											
 	</div>
 </div>	
-<!--fourth question. Changed the Yes/No variables to correct Xadd(). Response will increment variable by 1..changed quotation mark to stop error where yes goes back home-->
+<!--fourth question. Response will increment variable by 1.-->
 
 <div class="page" id="five">
 	<div class="w3-container w3-flat-carrot">
@@ -151,11 +151,11 @@ blah, blah, blah, blah
 	
 	<div id="content" class="w3-container">
 		<p>Are you coughing frequently?</p>
-		<a href="#six" onclick="coldAdd()" class="w3-btn w3-black">Yes</a>
-		<a href="#six" onclick="allergyAdd()" class="w3-btn w3-black">No</a>											
+		<a href="#six" onclick="dementiaAdd()" class="w3-btn w3-black">Yes</a>
+		<a href="#six" onclick="forgetfulAdd()" class="w3-btn w3-black">No</a>											
 	</div>
 </div>	
-<!--fifth question. Cold Question...changed quotation mark to stop error where yes goes back home-->
+<!--fifth question.-->
 	
 <div class="page" id="six">
 	<div class="w3-container w3-flat-carrot">
@@ -163,12 +163,12 @@ blah, blah, blah, blah
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Did your symptoms appear suddenly?</p>
-		<a href="#results" onclick="coldAdd(); "class="w3-btn w3-black"> Yes </a>
-		<a href="#results" onclick="allergyAdd(); "class="w3-btn w3-black"> No </a>											
+		<p>Are the friend's actions limited to forgetting keys or wallet and is otherwise perfectly capable of tasks such as driving and keeping track of classes?</p>
+		<a href="#results" onclick="forgetfulAdd(); "class="w3-btn w3-black"> Yes </a>
+		<a href="#results" onclick="dementiaAdd(); "class="w3-btn w3-black"> No </a>											
 	</div>
 </div>	
-<!--sixth question. Allergy Question...changed quotation mark to stop error where yes goes back home. added semicolon after function-->	
+<!--sixth question. forgetfulness Question.-->	
 	
 <!--____________________________________adding results section under this for testing______________________________________________________________________________-->	
 
@@ -180,10 +180,10 @@ blah, blah, blah, blah
 	<div id="content" class="w3-container">
 		<p id="results"> </p>  
 	
-	<a onclick="GetResults();" class="w3-btn w3-black"> Results 1 </a> 
+	<a onclick="GetResults();" class="w3-btn w3-black"> Results </a> 
 	</div> 	
 </div>
-<!--results page. Has a results header and a button, that when pressed will display the probability of the user having a cold or allergies-->	
+<!--results page. Has a results header and a button, that when pressed will display the probability of dementia or forgetfulness based on answers.-->	
 		
 	
 <footer class="w3-bottom w3-container w3-flat-carrot">
